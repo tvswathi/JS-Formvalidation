@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Registration </title>
+	<script>
+		function validate(){
+			 var exp1=/^(([\-\w]+)\.?)+@(([\-\w]+)\.?)+\.[a-zA-Z]{2,4}$/;
+			 var exp2=/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+			 var exp3=/^\d{10}$/;
+
+			 var email=document.myform.email.value;
+			 var pass=document.myform.pass.value;
+			 var mob=document.myform.mob.value;
+			 
+			 var r1=exp1.test(email);
+			 var r2=exp2.test(pass);
+			 var r3=exp3.test(mob);
+
+			 if(r1 && r2 && r3){
+			 	alert("validation sucess");
+			 	return true;
+			 }
+			  else if(r1 && !r2  && !r3)
+			  {
+			 	alert("Validation failed");
+			 	return false;
+			 }
+			 else if(!r3){
+			 	alert("Validation failed");
+			 	document.myform.mob.focus();
+			 	return false;
+
+			 }
+			 else if(!r2){
+			 	alert("Validation failed");
+			 	document.myform.pass.focus();
+			 	return false;
+			 }
+			 else if(!r1){
+			 	alert("Validation failed");
+			 	document.myform.email.focus();
+			 	return false;
+			 }
+			 else{
+			 	alert("Validation Failed");
+			 	return false;
+			 }
+
+		}
+		
+	</script>
+</head>
+<body>
+	<h3> User Registration</h3>
+	<form name="myform" action="reg.php" onsubmit="return validate()">
+		Email:<input type="text" name="email">
+		<br></br>
+		Pasword:<input type="password" name="pass">
+		<br></br>
+		Mob:<input type="text" name="mob">
+		<br></br>
+		<input type="submit" name="submit" value="submit"/>
+	</form>
+</body>
+</html>

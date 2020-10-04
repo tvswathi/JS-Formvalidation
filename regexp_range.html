@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Reg exp Specify Range Validation </title>
+	<script>
+		function validate(){
+			var x=/^[A-Za-z0-9\s]{3,10}$/;
+
+		var a=document.myform.address.value;
+		var r=x.test(a);
+
+		if(r){
+			alert("Registration Sucess");
+		}
+		else{
+			alert("Registration Failed");
+			document.getElementById("err").innerHTML="please enter alpha numeric values only and enter the  3-10 charecters";
+			document.myform.address.focus();
+			return false;
+		}
+
+		}
+		
+		
+	</script>
+</head>
+<body>
+	<h3> User Registration</h3>
+	<form name="myform" action="check.php" onsubmit="return validate()">
+		Address:<textarea name="address"></textarea>
+		<b id="err"></b>
+		<input type="submit" name="submit" value="submit"/>
+	</form>
+
+</body>
+</html>
