@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Validdation </title>
+	<script>
+		function validate(){
+			var n =document.myform.num.value;
+
+			if (isNaN(n) || n <1 || n >9){
+				alert("Enter a number bwt 1-9");
+				document.myform.num.focus();
+				return false;
+			}
+			else{
+				alert("Number registration Sucess");
+				return true;
+			}
+
+
+		}
+		
+	</script>
+</head>
+<body>
+	<h3>User Registration</h3>
+	<form name="myform" action="registration.php" onsubmit="return validate()">
+		Number:<input type="text" name="num"/>
+		<input type="submit" name="submit" value="submit"/>	
+	</form>
+
+</body>
+</html>

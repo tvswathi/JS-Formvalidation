@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reg expression validation </title>
+	<script>
+		function validate(){
+			var v =false;
+			var x =/^[A-Za-z]+$/;
+
+			var u =document.myform.uname.value;
+			var result=x.test(u);
+
+			if(result){
+				alert("validation sucess ");
+			}
+			else{
+				alert("Validatoin Failed");
+				document.myform.uname.focus();
+				return false;
+			}
+		}
+		
+	</script>
+</head>
+<body>
+	<h3> User Registration</h3>
+	<form name="myform" action="reg.php" onsubmit="return validate()">
+		Username:<input type="text" name="uname"/>
+		<input type="submit" value="submit"/>
+		
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Reg exp alpha numeric validation </title>
+	<script>
+		function validate(){
+			var x=/^[A-Za-z0-9\s]+$/;
+			
+			var a =document.myform.address.value;
+			var r =x.test(a);
+			if(r){
+				alert("validation sucess ");
+			}
+			else{
+				alert("Validation Failed");
+				document.getElementById("err").innerHTML="please enter alpha numeric values only ";
+				document.myform.address.focus();
+				return false;
+			}
+
+
+		}
+		
+	</script>
+</head>
+<body>
+	<h3> User Registration </h3>
+	<form name="myform" action="user.php" onsubmit="return validate()">
+		Address:<textarea name="address"></textarea>
+		<b id="err"></b></br>
+		<input type="submit" name="submit" value="submit"/>
+	</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>  Checkbox Validdation </title>
+	<script>
+		function validate(){
+			var v =false;
+
+			if(document.getElementById('javascript').checked){
+				v= true;
+			}
+			else if(document.getElementById('jquery').checked){
+				v = true;
+			}
+			else if(document.getElementById('nodejs').checked){
+				v = true;
+			}
+			if(v){
+				alert("Validation sucess");
+			}
+			else{
+				alert('Please check any tech');
+				return false;
+			}
+
+		}
+		
+	</script>
+</head>
+<body>
+	<h3>Select Technology</h3>
+	<form name="myform" action="tech.php" onsubmit="return validate()">
+		<input type="Checkbox" id="javascript" value="javascript"/>Javascript
+		<input type="Checkbox" id="jquery" value="jquery"/>Jquery
+		<input type="Checkbox" id="nodejs" value="nodejs">Node js
+		<br></br>
+		<input type="submit" name="submit" value="submit"/>	
+	</form>
+
+</body>
+</html>

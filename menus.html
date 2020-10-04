@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Menu Validdation </title>
+	<script>
+		function validate(){
+			var c =document.myform.color.value;
+
+			if (c==""){
+				alert("please select a color");
+				document.myform.color.focus();
+				return false;
+			}
+			else{
+				alert("Registration Sucessfull");
+				return true;
+			}
+
+			
+
+		}
+		
+	</script>
+</head>
+<body>
+	<h3>Select Color</h3>
+	<form name="myform" action="color.php" onsubmit="return validate()">
+		<select name="color">
+			<option value="">Select</option>
+			<option value="red">Red</option>
+			<option value="black">Black</option>
+			<option value="pink">Pink</option>
+		</select>
+		<input type="submit" name="submit" value="submit"/>	
+	</form>
+
+</body>
+</html>
